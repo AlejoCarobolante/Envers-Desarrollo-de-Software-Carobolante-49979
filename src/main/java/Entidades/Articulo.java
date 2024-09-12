@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Setter
 @RequiredArgsConstructor
 @Table(name = "Articulo")
+@Audited
 public class Articulo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +34,14 @@ public class Articulo implements Serializable {
     @NonNull private int cantidad;
     @NonNull private String denominacion;
     @NonNull private int precio;
+
+    public Articulo(int i, String nombre, int i1) {
+    }
+
+
+    public void getCategorias() {
+    }
+
+    public void getDetalleFacturas() {
+    }
 }

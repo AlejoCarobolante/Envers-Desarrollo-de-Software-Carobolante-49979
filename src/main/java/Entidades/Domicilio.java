@@ -1,18 +1,17 @@
 package Entidades;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Getter
-@Setter
+@Data
 @RequiredArgsConstructor
 @Table(name = "Domicilio")
+@AllArgsConstructor
+@Audited
 public class Domicilio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +22,10 @@ public class Domicilio implements Serializable {
 
     @NonNull private String nombreCalle;
     @NonNull private int numero;
+
+    public Domicilio(String nombreLugar, int i) {
+    }
+
+    public void setCliente(Cliente cli1) {
+    }
 }

@@ -1,18 +1,20 @@
 package Entidades;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Table(name = "Factura")
+@Audited
 public class Factura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +31,17 @@ public class Factura implements Serializable {
     @NonNull private String fecha;
     @NonNull private int numero;
     @NonNull private int total;
+
+    public void setCliente(Cliente cli1) {
+    }
+
+    public void setFecha(String s) {
+    }
+
+    public Calendar getDetalleFacturas() {
+    }
+
+    public void setTotal(int i) {
+    }
 }
+

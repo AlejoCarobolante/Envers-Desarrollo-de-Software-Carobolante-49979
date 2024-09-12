@@ -1,6 +1,7 @@
 package Entidades;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,10 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
+@Builder
 @RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Cliente")
+@Audited
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +36,10 @@ public class Cliente implements Serializable {
 
     @Column(name = "dni", unique = true)
     @NonNull private int dni;
+
+    public Cliente(String nombre, String apellido, int legajo) {
+    }
+
+    public void setDomicilio(Domicilio dom1) {
+    }
 }

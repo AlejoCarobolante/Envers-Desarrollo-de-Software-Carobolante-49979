@@ -23,6 +23,10 @@ dependencies {
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    //Envers: // https://mvnrepository.com/artifact/org.hibernate/hibernate-envers
+    implementation 'org.hibernate:hibernate-envers:6.6.0.Final'
+
 }
 
 test {
